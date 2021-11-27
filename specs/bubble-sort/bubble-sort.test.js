@@ -12,8 +12,28 @@
 
 function bubbleSort(nums) {
   // code goes here
-}
+  let loop = true;
+  let max_loop = (nums.length * nums.length) + 1;
+  let count = 0;
+  while (loop){
+    for (let i = 0;i < nums.length;i++){
+      count ++;
+      if (count > max_loop){
+        loop = false;
+      }
+      else if (nums[i] > nums[i+1]){
+        let small = nums[i+1];
+        let large = nums[i];
+        nums[i+1] = large;
+        nums[i] = small;
+        continue;
+      }
 
+    }
+  }
+}
+const nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
+bubbleSort(nums)
 // unit tests
 // do not modify the below code
 test.skip("bubble sort", function () {
