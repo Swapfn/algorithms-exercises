@@ -34,9 +34,10 @@ function bubbleSort(nums) {
 function bubbleSort(nums){
   // code goes here
   let swapped = false;
+  let counter = 0;
   do{
     swapped = false;
-    for (let i = 0; i < nums.length; i++){
+    for (let i = 0; i < nums.length - counter; i++){
       if (nums[i] > nums[i+1]){
         const smaller = nums [i + 1];
         nums [i + 1] = nums[i];
@@ -44,6 +45,7 @@ function bubbleSort(nums){
         swapped = true;
       }
     }
+    counter ++;
   } while (swapped);
 }
 const nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
