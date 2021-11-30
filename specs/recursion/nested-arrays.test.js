@@ -12,20 +12,7 @@
 function nestedAdd(array) {
   // write code here
   // base case
-  if (array.length <= 0){
-    return 0;
-  // recursion
-  }else{
-    let n = array.shift();
-    if (n.length === 0 || n.length == undefined){
-    n+=n;
-    nestedAdd(array);
-    }else{
-      nestedAdd(n);
-    }
-    n+=n
-    return n;
-  }
+
 }
 console.log(nestedAdd([10, [12, 14, [1], [16, [20]]], 10, 11]));
 /*
