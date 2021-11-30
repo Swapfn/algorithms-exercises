@@ -10,8 +10,12 @@
   factorial(3) = 6 
 */
 
-function factorial(n) {}
-
+function factorial(n) {
+  if (n === 1) return 1;
+  return factorial(n - 1) * (n);
+}
+console.log(factorial(10));
+/*
 // unit tests
 // do not modify the below code
 test.skip("factorials", () => {
@@ -20,3 +24,4 @@ test.skip("factorials", () => {
   expect(factorial(3)).toEqual(6);
   expect(factorial(10)).toEqual(3628800);
 });
+*/
