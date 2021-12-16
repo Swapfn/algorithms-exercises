@@ -13,7 +13,8 @@
   And you put xdescribe instead of describe if you want to suspend running the unit tests.  
 */
 
-function insertionSort(nums) {
+// old code, not optimized
+/* function insertionSort(nums) {
   // code goes here
   for (let i = 0; i < nums.length; i++){
     if (nums[i] > nums[i+1]){
@@ -36,6 +37,22 @@ function insertionSort(nums) {
       }
       }
     }
+  return nums;
+}
+*/ 
+function insertionSort(nums){
+  // main loop to iterate over the whole array of nums
+  for (let i = 1; i < nums.length; i++) {
+      // sorting loop, from current position of i to 0
+      for (let j = i; j >= 0; j--) {
+          // if the current number is bigger than the one before it, sort them
+          if (nums[j-1] > nums[j]) {
+              let low = nums[j];
+              nums[j] = nums [j-1];
+              nums[j-1] = low;
+          }
+      }
+  }
   return nums;
 }
 const nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
